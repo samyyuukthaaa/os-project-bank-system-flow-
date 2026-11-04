@@ -61,7 +61,7 @@ def generate(scenario, seed):
             fr = SPIKE_RATE
         if cfg["rush"] and RUSH_WIN[0] <= t < RUSH_WIN[1]:
             pr = RUSH_RATE
-        if rng.random() < fr:
+        if rng.random() < fr:  # */change can be done here/*
             b = rng.randint(1, 3)
             tasks.append(Task(tid, FRAUD, t, b, t + IMPLICIT_DL[FRAUD])); tid += 1
         if rng.random() < pr:
